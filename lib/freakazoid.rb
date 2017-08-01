@@ -1,5 +1,5 @@
 require 'krang'
-require 'ruby-cleverbot-api'
+require 'cleverbot'
 require 'awesome_print'
 require 'yaml'
 # require 'pry'
