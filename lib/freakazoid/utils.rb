@@ -12,7 +12,7 @@ module Freakazoid
     end
     
     def clever
-      @clever ||= Cleverbot.new(cleverbot_api_key)
+      @clever ||= Cleverbot::Client.new(cleverbot_api_key)
     end
     
     def merge(options = {})
