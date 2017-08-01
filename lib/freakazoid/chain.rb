@@ -18,7 +18,7 @@ module Freakazoid
           comment.body
         end + ' ' + tags.join(' ')
         
-        clever_response = clever.send_message(quote, comment.author)
+        clever_response = clever.say(quote, comment.author)
       rescue => e
         error e.inspect, backtrace: e.backtrace
         debug 'Resetting cleverbot.'
@@ -115,20 +115,5 @@ module Freakazoid
         end
       end
     end
-  end
-end
-
-class Cleverbot
-  def send_message(message, conversation_id)
-    enc_cs = CGI.escape(@cs)
-    enc_message = CGI.escape(message.strip)
-    enc_conversation_id = CGI.escape(conversation_id.strip)
-    url = "#{@api_url}&input=#{enc_message}&cs=#{enc_cs}"
-    url += "&conversation_id=#{enc_conversation_id}"
-    response = make_get(url)
-    puts ERRORS[response.code] if ERRORS.key?(response.code)
-    clever_response = JSON.parse(response)
-    @cs = clever_response['cs']
-    clever_response['output']
   end
 end
