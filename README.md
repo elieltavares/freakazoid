@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/elieltavares/freakazoid.svg?branch=master)](https://travis-ci.org/elieltavares/freakazoid)
 freakazoid
 ==========
 
@@ -49,7 +50,7 @@ You can try the system version of `ruby`, but if you have issues with that, use 
 First, clone this git and install the dependencies:
 
 ```bash
-$ git clone https://github.com/inertia186/freakazoid.git
+$ git clone https://github.com/elieltavares/freakazoid.git
 $ cd freakazoid
 $ bundle install
 ```
